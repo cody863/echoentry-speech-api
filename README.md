@@ -2,108 +2,68 @@
 
 Convert spoken numbers into clean structured digits.
 
-Unlike generic speech-to-text models, EchoEntry is optimized specifically for:
-✔ Phone numbers  
-✔ Tracking IDs  
-✔ Invoice values  
-✔ Spoken numeric data pipelines
+**EchoEntry** is a specialized speech recognition API optimized specifically for **numeric extraction** — not general transcription.
+
+Unlike generic ASR models, EchoEntry is designed for workflows where numbers matter more than sentences.
 
 ---
 
-## 🚀 Example
+## 🚀 What It Does
 
-### Request
+✔ Extracts digits directly from spoken audio  
+✔ Avoids messy natural language transcripts  
+✔ No regex / post-processing required  
+✔ Built for automation pipelines
+
+---
+
+## 🎯 Why Not Use Standard Speech-to-Text?
+
+| Generic ASR | EchoEntry |
+|-------------|-----------|
+Returns full sentences | Returns clean digits only |
+Requires parsing | Ready for databases |
+High variance | Structured output |
+Not optimized for numbers | Built specifically for numbers |
+
+---
+
+## 🔧 Common Use Cases
+
+• Voice → CRM data entry  
+• Capturing phone numbers from calls  
+• Logistics tracking ID transcription  
+• Financial / invoice automation  
+• Voice-driven numeric workflows  
+• Call-center structured capture systems
+
+---
+
+## 🌐 API Endpoint
 
 POST https://api.echoentry.ai/v1/transcribe-url
+
+
+---
+
+## 📥 Request Example
 
 ```json
 {
   "audio_url": "https://echoentry.ai/test_audio.wav"
 }
-Response
+📤 Response Example
 {
   "success": true,
   "digits": "418",
   "raw_text": "four one eight"
 }
-🎯 Why Not Use Regular Whisper?
-General ASR:
-
-Returns messy text
-
-Requires parsing logic
-
-Fails on structured numbers
-
-EchoEntry:
-
-Extracts digits directly
-
-No regex needed
-
-Built for automation workflows
-
-🔧 Use Cases
-• Voice → CRM entry
-• Logistics call automation
-• Voice-driven data entry
-• Call center transcription pipelines
-• Financial input capture
-
-📦 RapidAPI Listing
-Available on RapidAPI:
-👉 https://rapidapi.com/
-
-Search: EchoEntry
-
-🧪 Try Instantly (cURL)
+🧪 Try with cURL
 curl -X POST https://api.echoentry.ai/v1/transcribe-url \
   -H "Content-Type: application/json" \
-  -H "X-Api-Key: YOUR_KEY" \
+  -H "X-Api-Key: YOUR_API_KEY" \
   -d '{"audio_url":"https://echoentry.ai/test_audio.wav"}'
-⚙️ Status
-This is an experimental precision ASR tool focused on numeric extraction.
-
-Feedback welcome.
-
-
----
-
-# ✅ Step 2 — Add “Topics” (This Is HUGE For Discovery)
-
-On the repo page → click ⚙️ (About section) → add topics:
-
-speech-recognition
-whisper
-speech-to-text
-voice-api
-asr
-fastapi
-ai-api
-audio-processing
-automation
-machine-learning
-
-
-This is how GitHub SEO actually works.
-
----
-
-# ✅ Step 3 — Add ONE Example Folder (Developers Trust Examples)
-
-Create folder:
-
-/examples
-
-
-Add file:
-
-python_example.py
-
-
-Content:
-
-```python
+🐍 Python Example
 import requests
 
 url = "https://api.echoentry.ai/v1/transcribe-url"
@@ -120,15 +80,23 @@ headers = {
 response = requests.post(url, json=payload, headers=headers)
 
 print(response.json())
-That’s enough.
-No SDK. No package. No install steps.
+📊 Example Output
 
-✅ Step 4 — Add One Screenshot (People Trust Visual Proof)
-Take the RapidAPI success response screenshot and upload as:
+📦 Available via RapidAPI
+EchoEntry is listed on RapidAPI for easy integration and key management.
 
-/docs/demo.png
-Then add to README:
+Search for: EchoEntry
 
-## Example Output
+⚙️ Design Philosophy
+EchoEntry is intentionally narrow.
 
-![Demo](docs/demo.png)
+It does one job extremely well:
+
+Convert spoken numbers → structured digits.
+
+This makes it suitable for automation systems where traditional speech-to-text creates unnecessary complexity.
+
+🧠 Status
+Experimental precision ASR focused on numeric speech extraction.
+
+Feedback and real-world use cases are welcome.
