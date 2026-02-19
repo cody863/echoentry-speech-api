@@ -120,3 +120,15 @@ headers = {
 response = requests.post(url, json=payload, headers=headers)
 
 print(response.json())
+That’s enough.
+No SDK. No package. No install steps.
+
+✅ Step 4 — Add One Screenshot (People Trust Visual Proof)
+Take the RapidAPI success response screenshot and upload as:
+
+/docs/demo.png
+Then add to README:
+
+## Example Output
+
+![Demo](docs/demo.png)
